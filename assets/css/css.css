@@ -51,11 +51,17 @@ body:hover::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.6);
 }
 
+
 /* IMAGE */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.photography {
+  height: 310px;
+  width: 400px;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
+  border: 5px solid white;
+  -webkit-user-drag: none;
+  user-select: none; 
+
 }
 
 /* GLITCH HEADER EFFECT */
