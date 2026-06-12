@@ -54,8 +54,7 @@ body:hover::-webkit-scrollbar-thumb {
 
 /* IMAGE */
 .photography {
-  height: 310px;
-  width: 400px;
+  height: 30vh;
   margin-right: 1vw;
   margin-bottom: 2vh;
   border: 5px solid white;
