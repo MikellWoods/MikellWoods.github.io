@@ -36,6 +36,13 @@ a[href="/"]:hover {
   opacity: 1;
 }
 
+
+
+
+
+
+
+
 /* SCROLLBAR (desktop) */
 body::-webkit-scrollbar {
   width: 8px;
@@ -52,6 +59,11 @@ body:hover::-webkit-scrollbar-thumb {
 }
 
 
+
+
+
+
+
 /* IMAGE */
 .photography {
   height: 27vh;
@@ -62,6 +74,10 @@ body:hover::-webkit-scrollbar-thumb {
   user-select: none; 
 
 }
+
+
+
+
 
 /* GLITCH HEADER EFFECT */
 .glitch-text a {
@@ -79,6 +95,14 @@ body:hover::-webkit-scrollbar-thumb {
   75%  { text-shadow: -2px -2px rgb(255, 255, 255), 2px 2px rgb(255, 255, 255); }
   100% { text-shadow: 2px 2px rgb(255, 255, 255), -2px -2px rgb(255, 255, 255); }
 }
+
+
+
+
+
+
+
+
 
 /* HEADINGS & TEXT */
 h1 {
@@ -102,6 +126,12 @@ p {
 }
 
 
+
+
+
+
+
+
 /* WRAP CONTAINER */
 .wrap {
   width: 80vw;   
@@ -121,7 +151,7 @@ p {
   border-radius: 2vh;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
   padding: 5vh;
-  margin: 5vh;
+  margin: 3vh;
   
 }
 
@@ -133,6 +163,15 @@ body > section { display: none; }
   align-items: flex-start;
   text-align: left;    
 }
+
+
+
+
+
+
+
+
+
 
 
 .copy-link-btn {
@@ -223,6 +262,17 @@ textarea {
   resize: vertical;
   min-height: 150px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* Blinking cursor effect */
 textarea:focus,
