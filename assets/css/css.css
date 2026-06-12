@@ -3,26 +3,35 @@
   src: url('../PxPlus_IBM_VGA8.ttf') format('truetype');
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   
 }
+
+
 html, body {
   height: 100%;
   color: rgb(255, 255, 255);
 	font-family: 'PxPlus IMB VGA8';
   scroll-behavior: smooth;
 }
+
+
 a {
     color: rgb(255, 255, 255);;
     text-decoration: none;
 }
+
+
 a:hover {
     animation: glitch 1s infinite;
     color: #000000;
 }
+
+
 a[href="/"] {
   display: inline-block;
   margin-top: 1rem;
@@ -31,6 +40,7 @@ a[href="/"] {
   text-decoration: underline;
   opacity: 0.8;
 }
+
 
 a[href="/"]:hover {
   opacity: 1;
@@ -42,49 +52,27 @@ a[href="/"]:hover {
 
 
 
-
-/* SCROLLBAR (desktop) */
-body::-webkit-scrollbar {
-  width: 8px;
-}
-body::-webkit-scrollbar-track {
-  background: #000;
-}
-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-}
-body:hover::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.6);
+/* G E N E R A L */
+/* GLASS BACKGROUND */
+.glass {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(8px);           
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  border-radius: 2vh;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+  padding: 5vh;
+  margin: 3vh;
+  
 }
 
-
-
-
-
-
-
-/* IMAGE */
-.photography {
-  height: 27vh;
-  margin-right: 1vw;
-  margin-bottom: 2vh;
-  border: 0.5vh solid white;
-  -webkit-user-drag: none;
-  user-select: none; 
-
+body > section { display: none; }  
+.wrap > .glass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;    
 }
-
-
-
-.photography_text {
-  font-size: 9vw;
-
-}
-
-
-
-
 
 /* GLITCH HEADER EFFECT */
 .glitch-text a {
@@ -104,8 +92,61 @@ body:hover::-webkit-scrollbar-thumb {
 }
 
 
+/* SCROLLBAR (desktop) */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+body:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* WRAP CONTAINER */
+.wrap {
+  width: 80vw;   
+  max-width: 1000px;   
+  margin: 10vh auto;  
+  position: relative;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
 
 
+
+
+/* INDEX */
+
+
+
+
+
+/* PHOTOGRAPHY */
+.photography_image {
+  height: 27vh;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
+  border: 0.5vh solid white;
+  -webkit-user-drag: none;
+  user-select: none; 
+}
+
+.photography_header {
+  font-size: 9vw;
+
+}
+
+/*
+.photography_text {
+  font-size: 5vw;
+
+}
+*/
 
 
 
@@ -132,44 +173,6 @@ p {
 
 }
 
-
-
-
-
-
-
-
-/* WRAP CONTAINER */
-.wrap {
-  width: 80vw;   
-  max-width: 1000px;   
-  margin: 10vh auto;  
-  position: relative;
-  z-index: 1;
-  color: rgb(255, 255, 255);
-}
-
-
-/* GLASS PANELS */
-.glass {
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(8px);           
-  border: 1px solid rgba(255, 255, 255, 0.3); 
-  border-radius: 2vh;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-  padding: 5vh;
-  margin: 3vh;
-  
-}
-
-body > section { display: none; }  
-.wrap > .glass {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;    
-}
 
 
 
@@ -217,6 +220,11 @@ body > section { display: none; }
   80%  { text-shadow: 1px 2px red, -1px -2px blue; }
   100% { text-shadow: 2px 0 red, -2px 0 blue; }
 }
+
+
+
+
+
 
 .ad-wrapper {
   width: 100%;
@@ -342,6 +350,12 @@ label.valid.show-check::after {
 .copy-link-btn.active {
   animation: btn-glitch 0.3s ease-in-out;
 }
+
+
+
+
+
+
 
 @keyframes flicker {
   0% {
