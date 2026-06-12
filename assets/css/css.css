@@ -69,7 +69,7 @@ body:hover::-webkit-scrollbar-thumb {
   height: 27vh;
   margin-right: 1vw;
   margin-bottom: 2vh;
-  border: 5px solid white;
+  border: 0.5vh solid white;
   -webkit-user-drag: none;
   user-select: none; 
 
