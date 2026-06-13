@@ -229,7 +229,7 @@ font-size: 9vw;
 
 
 /* PHOTOGRAPHY */
-.photography_image {
+.photography-image {
   height: 27vh;
   margin-right: 1vw;
   margin-bottom: 2vh;
@@ -238,12 +238,12 @@ font-size: 9vw;
   user-select: none; 
 }
 
-.photography_header {
+.photography-header {
   font-size: 9vw;
 
 }
 
-.photography_text {
+.photography-text {
   font-size: 5vw;
 
 }
