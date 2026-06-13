@@ -74,6 +74,8 @@ body > section { display: none; }
   text-align: left;    
 }
 
+
+
 /* GLITCH HEADER EFFECT */
 .glitch-text a {
   position: relative;
@@ -121,6 +123,10 @@ body:hover::-webkit-scrollbar-thumb {
 
 
 /* INDEX */
+.index_header {
+font-size: 9vw;
+
+}
 
 
 
