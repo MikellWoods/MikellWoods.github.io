@@ -7,12 +7,12 @@
 
 html, body {
   height: 100%;
-  background-image: url('assets/bgMWWM.jpg');
+  background-image: url('../assets/bgMWWM.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
-  color: rgb(158, 158, 158);
+  color: white;
 	font-family: 'PxPlus IMB VGA8';
   scroll-behavior: smooth;
 }
@@ -245,10 +245,12 @@ font-size: 9vw;
 
 .photography-header {
   font-size: 9vw;
+	color: white;
 }
 
 .photography-text {
-  font-size: 5vw;
+  font-size: 3vw;
+	color: white;
 }
 
 
