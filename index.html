@@ -123,13 +123,13 @@
 <p>COMING SOON</p>
 <p>COMING SOON</p>
 
-
 </div>
 
 
 
-
-
+<div class="index-footer">
+  <p>More Info</p>
+</div>
 
 
 
@@ -152,10 +152,9 @@ html, body {
   font-family: 'PxPlus IMB VGA8';
   scroll-behavior: smooth;
   -webkit-user-drag: none;
-  user-select: none; 
-}
-
-
+  user-select: none;
+  
+  
 
 /* INDEX TEXT */
 .index-top {
@@ -164,7 +163,6 @@ html, body {
   color: white;
   padding: 3vh;
   text-align: center;
-
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -193,6 +191,17 @@ html, body {
   z-index: 0;
 }
 
+.index-footer {
+   background: rgba(50, 50, 50, 0.50); 
+   backdrop-filter: blur(8px);
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 5wh;
+   color: white;
+   text-align: center;
+}
 
 
 /* INDEX MENU */
@@ -228,8 +237,8 @@ html, body {
 #index-menu-bar {
   position: sticky;
   overflow: hidden;
-  background: rgba(75, 75, 75, 0.50); 
-  backdrop-filter: blur(8px);  
+  background: rgba(50, 50, 50, 0.50); 
+  backdrop-filter: blur(8px);
   top: 21vh;
   z-index: 2;
 
@@ -446,11 +455,6 @@ body:hover::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.6);
 }
 </style>
-
-
-
-
-
 
 
 
