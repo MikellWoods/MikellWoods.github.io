@@ -224,11 +224,18 @@ box-sizing: border-box;
 
 .story-header {
 margin-bottom: 2vh;
-font-size: 7vh;
+font-size: 2vh !important;
 text-transform: uppercase;
 letter-spacing: 1vh;
 border-bottom: 0.8vh dashed #cccccc;
 padding-bottom: 1vh;
+}
+
+@media (max-width: 800px) {
+.story-header {
+font-size: 3.7vw !important;
+letter-spacing: 2px !important;
+}
 }
 
 .story-paragraph {
