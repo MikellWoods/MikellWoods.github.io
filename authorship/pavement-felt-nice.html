@@ -200,8 +200,8 @@ To the Unforeseen Acts of Nature,<br><br>
 <style>
 /* SHORT STORY LETTER STYLE */
 @font-face {
-  font-family: 'Dirty Enough';
-  src: url('assets/DirtyEnough-Regular.ttf') format('truetype');
+font-family: 'Dirty Enough';
+src: url('assets/DirtyEnough-Regular.ttf') format('truetype');
 }
 
 body {
@@ -216,19 +216,19 @@ min-height: 100vh;
 }
 
 .story-container {
-max-width: 600px;
+max-width: 72vh;
 width: 85%;
-padding: 120px 20px;
+padding: 12vh 2vh;
 box-sizing: border-box;
 }
 
 .story-header {
-margin-bottom: 5rem;
-font-size: 1rem;
+margin-bottom: 2vh;
+font-size: 7vh;
 text-transform: uppercase;
-letter-spacing: 2px;
-border-bottom: 1px dashed #cccccc;
-padding-bottom: 1rem;
+letter-spacing: 1vh;
+border-bottom: 0.8vh dashed #cccccc;
+padding-bottom: 1vh;
 }
 
 .story-paragraph {
@@ -236,10 +236,10 @@ opacity: 0;
 transform: translateY(20px);
 filter: blur(4px);
 transition: opacity 3s ease, transform 3s ease, filter 3s ease;
-margin-bottom: 3rem;
-font-size: 1.1rem;
+margin-bottom: 6vh;
+font-size: 2vh;
+font-weight: 700;
 line-height: 1.6;
-font-weight: 500;
 animation: noteJitter 0.25s infinite alternate;
 }
 
@@ -257,9 +257,24 @@ filter: blur(0);
 }
 
 .sign-off {
-margin-top: 6rem;
-border-top: 1px dashed #cccccc;
-padding-top: 2rem;
+margin-top: 10vh;
+border-top: 0.8vh dashed #cccccc;
+padding-top: 2vh;
+}
+
+
+
+/* SCROLLBAR HIDER */
+html { /* Firefox */
+scrollbar-width: none; 
+}
+
+body { /* IE and Edge */
+-ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { /* Chrome */
+display: none;
 }
 
 </style>
