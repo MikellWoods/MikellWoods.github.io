@@ -226,16 +226,9 @@ box-sizing: border-box;
 margin-bottom: 2vh;
 font-size: 2vh !important;
 text-transform: uppercase;
-letter-spacing: 1vh;
 border-bottom: 0.8vh dashed #cccccc;
 padding-bottom: 1vh;
-}
-
-@media (max-width: 800px) {
-.story-header {
-font-size: 3.7vw !important;
-letter-spacing: 2px !important;
-}
+text-overflow: clip;
 }
 
 .story-paragraph {
@@ -296,7 +289,7 @@ const paragraphs = document.querySelectorAll('.story-paragraph');
 const observerOptions = {
 root: null,
 threshold: 0.9, // Triggers = Paragraph 90% Visible
-rootMargin: "0px 0px -150px 0px" // Triggers = Before Hitting Screen's Center
+rootMargin: "0px 0px -120px 0px" // Triggers = Before Hitting Screen's Center
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
