@@ -64,13 +64,41 @@
     
 <a href="#">__________________</a>
 
-<a href="#">Writing</a>
+
+<details class="index-menu-list-dropdown">
+<summary class="index-menu-list-dropdown-trigger">Authorship ▾</summary>
+
+<div class="index-menu-list-dropdown-content">
+<a href="#">Mortis</a>
+<a href="#">Mortis</a>
+<a href="#">Mortis</a>
+</div>
+
+</details>
+
+
+<details class="index-menu-list-dropdown">
+<summary class="index-menu-list-dropdown-trigger">Blog ▾</summary>
+
+<div class="index-menu-list-dropdown-content">
+<a href="#">Mortis</a>
+<a href="#">Mortis</a>
+<a href="#">Mortis</a>
+</div>
+
+</details>
+
+
+<a href="#">Story Advice</a>
+
 <a href="#">Dicitionary</a>
 
 <a href="#">__________________</a>
 
 
+
 <a href="#">Music</a>
+
 
 </div>
 </div>
@@ -167,7 +195,6 @@ html, body {
   top: 0;
   overflow: hidden;
   z-index: 1;
-
 }
 
 .index-main {
@@ -283,6 +310,36 @@ html, body {
   right: 45px;
   font-size: 60px;
 }
+
+
+/* INDEX MENU LIST DROPDOWN */
+.index-menu-list-dropdown {
+  display: block;
+  text-align: center;
+}
+.index-menu-list-dropdown-trigger {
+  padding: 8px;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  cursor: pointer;
+  list-style: none; /* Hides default dropdown arrow */
+  transition: 0.3s;
+}
+.index-menu-list-dropdown-trigger::-webkit-details-marker {
+  display: none; /* Hides default arrow in Safari */
+}
+.index-menu-list-dropdown-trigger:hover, .index-menu-list-dropdown-trigger:focus {
+  color: #f1f1f1;
+}
+.index-menu-list-dropdown-content a {
+  font-size: 4vh;
+}
+.index-menu-list-dropdown-content a:hover {
+  color: #f1f1f1;
+}
+
+
 
 @media screen and (max-height: 450px) {
   .index-overlay a {font-size: 20px}
@@ -454,6 +511,7 @@ body::-webkit-scrollbar-thumb {
 body:hover::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.6);
 }
+
 </style>
 
 
