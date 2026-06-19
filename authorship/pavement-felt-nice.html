@@ -36,12 +36,12 @@
 </head>
 <body>
 
-<div class="film-grain"></div>
+
 
 <div class="story-container">
         
 <div class="story-header story-paragraph">
-MW://Daymare.Pavement=Felt+Nice
+MW://ShortStory.Pavement=Felt+Nice
 </div>
 
 <p class="story-paragraph">
@@ -210,32 +210,6 @@ padding: 0;
 display: flex;
 justify-content: center;
 min-height: 100vh;
-}
-
-
-
-/* SCREEN GRAIN */
-body::before {
-content: "";
-position: fixed;
-top: -100px;
-left: -100px;
-width: calc(100% + 200px);
-height: calc(100% + 200px);
-background: 
-repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 3px) 0 0/11px 11px,
-repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 4px) 0 0/13px 13px,
-repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 5px) 0 0/17px 17px;
-mix-blend-mode: screen;
-z-index: 9999;
-pointer-events: none;
-animation: g 0.12s steps(3) infinite;
-}
-@keyframes g {
-0% { transform: translate(0, 0); }
-33% { transform: translate(-15px, 25px); }
-66% { transform: translate(25px, -15px); }
-100% { transform: translate(-5px, -5px); }
 }
 
 
