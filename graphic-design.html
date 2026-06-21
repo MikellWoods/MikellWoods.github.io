@@ -113,8 +113,8 @@
 
 
 
-
-<div class="main-body main-body-text" id="glass-area">
+<div id="graphic-design-modal-blur-background">
+  <div class="main-body main-body-text" id="glass-area">
 
 <div class="graphic-design-row"> 
 <div class="graphic-design-column">
@@ -125,7 +125,7 @@
 <img class="graphic-design-modal-trigger" src="assets/graphic design/BannedClubOnlineAdScreenshot.jpg" graphic-design-modal-caption-text="Banned Club YouTube Ad For High School">
 <img class="graphic-design-modal-trigger" src="assets/graphic design/BannedClubSpotifyAd.jpg" graphic-design-modal-caption-text="Banned Club Spotify Ad For High School">
 <img class="graphic-design-modal-trigger" src="assets/graphic design/Barqs.png" graphic-design-modal-caption-text="Barq's Advertisement Editing Test">
-<img class="graphic-design-modal-trigger" src="assets/graphic design/MagnoliaSnowThumbnail.jpg" data-caption="Magnolia Poster Concept">
+<img class="graphic-design-modal-trigger" src="assets/graphic design/MagnoliaSnowThumbnail.jpg" graphic-design-modal-caption-text="Magnolia Poster Concept">
 <img class="graphic-design-modal-trigger" src="assets/graphic design/MDTealLogo.jpg" graphic-design-modal-caption-text="MD Teal Logo Concept">
 <img class="graphic-design-modal-trigger" src="assets/graphic design/MDYouTubeLogo.jpg" graphic-design-modal-caption-text="MD Logo Outdated">
 <img class="graphic-design-modal-trigger" src="assets/graphic design/MemeSawPactLogo.jpg" graphic-design-modal-caption-text="MemeSaw Pact Logo">
@@ -175,7 +175,10 @@
 </div>
 </div>
 
-</div> </div> <div id="graphic-design-image-gallery-modal" class="graphic-design-modal">
+</div> 
+</div> 
+
+<div id="graphic-design-image-gallery-modal" class="graphic-design-modal">
 <span class="graphic-design-modal-close">&times;</span>
 <img class="graphic-design-modal-image" id="graphic-design-modal-target-image">
 <div class="graphic-design-modal-caption" id="graphic-design-modal-target-caption"></div>
@@ -608,10 +611,10 @@ color: red;
 }
 
 #graphic-design-modal-blur-background {
-transition: filter 1s ease;
+transition: filter 0.3s ease-in-out;
 }
 #graphic-design-modal-blur-background.page-blur {
-filter: blur(12px);
+filter: blur(15px) !important;
 pointer-events: none;
 }
 </style>
