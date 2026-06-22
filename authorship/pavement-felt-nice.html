@@ -214,7 +214,7 @@ min-height: 100vh;
 
 
 
-/* SHORT STORY LETTER STYLE */
+/* SHORT STORY */
 .story-container {
 max-width: 72vh;
 width: 85%;
@@ -298,6 +298,15 @@ observer.unobserve(entry.target); // Re-Triggering Preventer
 }, observerOptions);
 
 paragraphs.forEach(p => observer.observe(p));
+
+
+
+/* PAGE PROTECTER */
+document.addEventListener('contextmenu', function(event) {
+if (event.target.tagName) {
+event.preventDefault();
+}
+});
 </script>
 
 
