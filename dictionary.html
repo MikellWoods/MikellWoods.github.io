@@ -43,11 +43,27 @@
 <body>
 
 
+
+<div id="loading-screen">
+<div class="loading-wrapper">
+<div class="loading-text">[LOADING]</div>
+<div class="render-progress-container">
+<div id="render-progress-bar"></div>
+</div>
+</div>
+</div>
+
+
+
 <div id="menu" class="menu-overlay">
-
 <a href="javascript:void(0)" class="menu-close-trigger" onclick="closeMenu()">&times;</a>
-
 <div class="menu-overlay-content">
+
+
+
+<form class="menu-search-form" id="menuSearchForm" onsubmit="event.preventDefault();">
+<input type="text" id="menuSearchInput" placeholder="[MW://SEARCH.BAR]" autocomplete="off">
+</form>
 
 
 
@@ -102,8 +118,11 @@
 
 
 <div class="header-menu-bar-container">
-<div class="header"><h1 style="font-size: 6.5vh; margin: 10px 0;">Dictionary</h1></div>
+<div class="header"><h1 style="font-size: 6.5vh;">Dictionary</h1></div>
 <div id="menu-bar"><span id="menu-button" onclick="openMenu()">&#9776;</span></div>
+<div class="scroll-progress-container">
+<div id="scroll-progress-bar"></div>
+</div>
 </div>
 
 
@@ -289,6 +308,8 @@ backdrop-filter: blur(5px);
 overflow-x: hidden;
 transition: 2.5s;
 z-index: 12;
+scrollbar-width: none;
+-ms-overflow-style: none; 
 }
 
 .menu-overlay a {
@@ -376,7 +397,7 @@ font-size: 4vh;
 
 
 
-/* CRT EFFECTS & ANIMATIONS */
+/* PAGE FLICKER */
 @keyframes flicker {
 0%, 10%, 20%, 40%, 60%, 100% { opacity: 0.25; }
 5%, 30%, 35%, 75%, 95% { opacity: 0.50; }
@@ -434,7 +455,7 @@ color: #000000;
 
 
 
-/* SCROLLBAR */
+/* SCROLLBAR HIDER */
 body::-webkit-scrollbar {
 width: 8px;
 }
@@ -501,6 +522,123 @@ flex: 1 1 100%;
 }
 }
 
+
+
+/* LOADING SCREEN STYLES */
+#loading-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: #000000;
+z-index: 99998; 
+display: flex;
+justify-content: center;
+align-items: center;
+transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.6s;
+}
+
+.loading-wrapper {
+text-align: center;
+width: 250px;
+}
+
+.loading-text {
+color: #ffffff;
+font-size: 4vh;
+letter-spacing: 4px;
+margin-bottom: 15px;
+animation: pulse 1.5s infinite ease-in-out;
+}
+
+.render-progress-container {
+width: 100%;
+height: 6px;
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#render-progress-bar {
+height: 100%;
+width: 15%;
+background: #ffffff;
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+transition: width 0.4s ease-out;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 0.4; }
+50% { opacity: 1; }
+}
+
+
+
+/* SEARCH BAR */
+.menu-search-form {
+display: inline-flex;
+justify-content: center;
+margin-bottom: 30px;
+width: 80%;
+max-width: 400px;
+border: 2px solid #818181;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.menu-search-form input[type="text"] {
+background: transparent;
+border: none;
+padding: 10px;
+color: white;
+font-family: 'PxPlus IMB VGA8', monospace;
+font-size: 24px;
+width: 100%;
+text-align: center;
+outline: none;
+}
+
+.menu-search-form:focus-within {
+border-color: white;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.menu-item, .menu-separator {
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+/* SCROLL BAR HEADER */
+.scroll-progress-container {
+width: 100%;
+height: 4px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(8px);
+}
+
+#scroll-progress-bar {
+height: 100%;
+width: 0%;
+background: rgba(255, 255, 255, 0.8);
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
+transition: width 0.1s ease-out;
+}
+
+
+
+/* SCROLLBAR HIDER */
+html {
+scrollbar-width: none; 
+}
+
+body {
+-ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-button {
+display: none;
+}
+
 </style>
 
 
@@ -530,6 +668,89 @@ if (event.target.tagName) {
 event.preventDefault();
 }
 });
+
+
+
+/* LOADING SCREEN */
+(function() {
+const renderBar = document.getElementById('render-progress-bar');
+const loader = document.getElementById('loading-screen');
+let currentProgress = 15;
+
+const progressInterval = setInterval(() => {
+if (currentProgress < 85) {
+currentProgress += Math.floor(Math.random() * 5) + 2; // Increment by a random small amount
+if (renderBar) renderBar.style.width = currentProgress + "%";
+}
+}, 100);
+
+function completeLoading() {
+clearInterval(progressInterval);
+if (renderBar) renderBar.style.width = "100%";
+
+setTimeout(() => {
+if (loader) {
+loader.style.opacity = '0';
+loader.style.visibility = 'hidden';
+setTimeout(() => loader.remove(), 600);
+}
+}, 2000);
+}
+
+if (document.readyState === "complete") {
+completeLoading();
+} else {
+window.addEventListener('load', completeLoading);
+}
+})();
+
+
+
+/* SCROLL PROGRESS TRACKER */
+window.addEventListener('scroll', function() {
+const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+
+document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
+});
+
+
+
+/* SEARCH BAR */
+const searchInput = document.getElementById('menuSearchInput');
+
+function filterMenu() {
+const filterValue = searchInput.value.toLowerCase().trim();
+const menuItems = document.querySelectorAll('.menu-item');
+const separators = document.querySelectorAll('.menu-separator');
+
+menuItems.forEach(item => {
+const text = item.textContent.toLowerCase();
+        
+if (text.includes(filterValue)) {
+item.style.display = "block";
+item.style.opacity = "1";
+item.style.transform = "scale(1)";
+            
+if (filterValue !== "" && item.tagName === "DETAILS") {
+item.setAttribute("open", "true");
+}
+} else {
+item.style.display = "none";
+item.style.opacity = "0";
+item.style.transform = "scale(0.95)";
+}
+});
+
+separators.forEach(sep => {
+sep.style.display = filterValue === "" ? "block" : "none";
+});
+}
+
+searchInput.addEventListener('input', filterMenu);
+
 </script>
 
 
