@@ -472,7 +472,7 @@ opacity: 1;
 
 
 
-/* LOADING SCREEN STYLES */
+/* LOADING SCREEN */
 #loading-screen {
 position: fixed;
 top: 0;
@@ -654,7 +654,7 @@ let currentProgress = 15;
 
 const progressInterval = setInterval(() => {
 if (currentProgress < 85) {
-currentProgress += Math.floor(Math.random() * 5) + 2; // Increment by a random small amount
+currentProgress += Math.floor(Math.random() * 5) + 2;
 if (renderBar) renderBar.style.width = currentProgress + "%";
 }
 }, 100);

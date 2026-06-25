@@ -67,22 +67,22 @@
 
 
 
-<a href="index.html">Index</a>
+<div class="menu-item"><a href="index.html">Index</a></div>
 
-<a href="#">__________________</a>
+<div class="menu-separator"><a href="#">__________________</a></div>
 
-<a href="artisty.html">Artistry</a>
-<a href="photography.html">Photography</a>
-<a href="graphic-design.html">Graphic Design</a>
+<div class="menu-item"><a href="artisty.html">Artistry</a></div>
+<div class="menu-item"><a href="photography.html">Photography</a></div>
+<div class="menu-item"><a href="graphic-design.html">Graphic Design</a></div>
 
-<a href="#">__________________</a>
+<div class="menu-separator"><a href="#">__________________</a></div>
 
-<a href="videography.html">Videography</a>
-<a href="filmography.html">Filmography</a>
+<div class="menu-item"><a href="videography.html">Videography</a></div>
+<div class="menu-item"><a href="filmography.html">Filmography</a></div>
 
-<a href="#">__________________</a>
+<div class="menu-separator"><a href="#">__________________</a></div>
 
-<details class="menu-list-dropdown">
+<details class="menu-list-dropdown menu-item">
 <summary class="menu-list-dropdown-trigger">Blog ▾</summary>
 <div class="menu-list-dropdown-content">
 <a href="#">---</a>
@@ -91,7 +91,7 @@
 </div>
 </details>
 
-<details class="menu-list-dropdown">
+<details class="menu-list-dropdown menu-item">
 <summary class="menu-list-dropdown-trigger">Authorship ▾</summary>
 <div class="menu-list-dropdown-content">
 <a href="authorship/pavement-felt-nice.html">Pavement Felt Nice</a>
@@ -100,13 +100,13 @@
 </div>
 </details>
 
-<a href="dictionary.html">Dictionary</a>
-<a href="writing-advice.html">Writing Advice</a>
+<div class="menu-item"><a href="#">Dictionary</a></div>
+<div class="menu-item"><a href="writing-advice.html">Writing Advice</a></div>
 
-<a href="#">__________________</a>
+<div class="menu-separator"><a href="#">__________________</a></div>
 
-<a href="#">Music</a>
-<a href="#">Sound Effects</a>
+<div class="menu-item"><a href="#">Music</a></div>
+<div class="menu-item"><a href="#">Sound Effects</a></div>
 
 </div>
 </div>
@@ -679,7 +679,7 @@ let currentProgress = 15;
 
 const progressInterval = setInterval(() => {
 if (currentProgress < 85) {
-currentProgress += Math.floor(Math.random() * 5) + 2; // Increment by a random small amount
+currentProgress += Math.floor(Math.random() * 5) + 2;
 if (renderBar) renderBar.style.width = currentProgress + "%";
 }
 }, 100);
