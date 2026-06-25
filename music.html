@@ -133,6 +133,12 @@
 <div class="main-body main-body-text" id="glass-area">
 
 
+<div class="visualizer-container">
+<div class="visualizer-label">[MW://AUDIO.DISPLAY]</div>
+<canvas id="visualizer-canvas"></canvas>
+</div>
+
+
 
 <div class="music-library-grid">
    
@@ -143,7 +149,7 @@
 <div class="music-track-info">
 <div class="music-track-title">a dream where I killed a man</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/a dream where I killed a man.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -159,7 +165,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">a dream where I splattered</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/a dream where I splattered.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -175,7 +181,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">jump to your veilway haven</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/jump to your veilway haven.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -191,7 +197,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">a surreal limit to a liminal space</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/a surreal limit to a liminal space.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -207,7 +213,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">path down a niveous rouge</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/path down a niveous rouge.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -223,7 +229,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">a sky of citrus fog</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/a sky of citrus fog.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -239,7 +245,7 @@ Audio unsupported.
 <div class="music-track-info">
 <div class="music-track-title">false descent into the oldest lie</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/false descent into the oldest lie.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -254,7 +260,7 @@ Audio unsupported.
 </div><div class="music-track-info">
 <div class="music-track-title">out of bounds</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/out of bounds.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -269,7 +275,7 @@ Audio unsupported.
 </div><div class="music-track-info">
 <div class="music-track-title">funfun</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/funfun.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -284,7 +290,7 @@ Audio unsupported.
 </div><div class="music-track-info">
 <div class="music-track-title">flowers are blooming when they shouldn't</div>
 <div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload">
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/flowers are blooming when they shouldnt.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
@@ -791,6 +797,37 @@ opacity: 0.8;
 opacity: 1;
 }
 
+
+
+/* AUDIO VISUALIZER */
+.visualizer-container {
+background: rgba(0, 0, 0, 0.4);
+border: 1px dashed rgba(255, 255, 255, 0.3);
+border-radius: 1vh;
+padding: 15px;
+margin: 0 auto 30px auto;
+width: 100%;
+max-width: 600px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.visualizer-label {
+font-size: 1.8vh;
+color: rgba(255, 255, 255, 0.5);
+margin-bottom: 10px;
+letter-spacing: 2px;
+}
+
+#visualizer-canvas {
+width: 100%;
+height: 120px;
+background: transparent;
+display: block;
+}
+
 </style>
 
 
@@ -907,7 +944,7 @@ searchInput.addEventListener('input', filterMenu);
 
 
 
-/* ONE TRACK*/
+/* ONLY PLAY ONE TRACK AT A TIME */
 document.addEventListener('play', function(e) {
 const audios = document.querySelectorAll('audio');
 audios.forEach(audio => {
@@ -916,6 +953,74 @@ audio.pause();
 }
 });
 }, true);
+
+
+
+/* AUDIO VISUALIZER */
+(function() {
+let audioCtx;
+let analyser;
+let bufferLength;
+let dataArray;
+const canvas = document.getElementById('visualizer-canvas');
+const canvasCtx = canvas.getContext('2d');
+const audioSourcesMap = new Map();
+
+function initAudioContext() {
+if (audioCtx) return;
+audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+analyser = audioCtx.createAnalyser();
+analyser.fftSize = 256;
+bufferLength = analyser.frequencyBinCount;
+dataArray = new Uint8Array(bufferLength);
+analyser.connect(audioCtx.destination);
+drawVisualizer();
+}
+
+function setupAudioSource(audioElement) {
+if (audioSourcesMap.has(audioElement)) return;
+initAudioContext();
+try {
+const source = audioCtx.createMediaElementSource(audioElement);
+source.connect(analyser);
+audioSourcesMap.set(audioElement, source);
+} catch (err) {
+console.log("Visualizer routing notice:", err);
+}
+}
+
+document.addEventListener('play', function(e) {
+if (e.target.tagName === 'AUDIO') {
+if (audioCtx && audioCtx.state === 'suspended') {
+audioCtx.resume();
+}
+setupAudioSource(e.target);
+}
+}, true);
+
+function resizeCanvas() {
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function drawVisualizer() {
+requestAnimationFrame(drawVisualizer);
+if (!analyser) return;
+analyser.getByteFrequencyData(dataArray);
+canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+const barWidth = (canvas.width / bufferLength) * 1.5;
+let barHeight;
+let x = 0;
+for (let i = 0; i < bufferLength; i++) {
+barHeight = dataArray[i] / 2;
+canvasCtx.fillStyle = 'rgba(255, 255, 255, ' + (barHeight / 150 + 0.1) + ')';
+canvasCtx.fillRect(x, canvas.height - barHeight, barWidth - 2, barHeight);
+x += barWidth;
+}
+}
+})();
 </script>
 
 
