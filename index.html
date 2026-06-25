@@ -44,72 +44,73 @@
 
 
 
-
 <body>
 
 
 
 <div id="loading-screen">
 <div class="loading-wrapper">
-<div class="loading-text">LOADING...</div>
+<div class="loading-text">[LOADING]</div>
 <div class="render-progress-container">
 <div id="render-progress-bar"></div>
 </div>
 </div>
 </div>
 
+
+
 <div id="menu" class="menu-overlay">
 <a href="javascript:void(0)" class="menu-close-trigger" onclick="closeMenu()">&times;</a>
 <div class="menu-overlay-content">
 
-<a href="#">Index</a>
-
-<a href="#">__________________</a>
-
-<a href="artisty.html">Artistry</a>
-<a href="photography.html">Photography</a>
-<a href="graphic-design.html">Graphic Design</a>
-
-<a href="#">__________________</a>
-
-<a href="videography.html">Videography</a>
-<a href="filmography.html">Filmography</a>
-
-<a href="#">__________________</a>
 
 
-<details class="menu-list-dropdown">
+<form class="menu-search-form" id="menuSearchForm" onsubmit="event.preventDefault();">
+<input type="text" id="menuSearchInput" placeholder="[MW://SEARCH.BAR]" autocomplete="off">
+</form>
+
+
+
+<div class="menu-item"><a href="#">Index</a></div>
+
+<div class="menu-separator"><a href="#">__________________</a></div>
+
+<div class="menu-item"><a href="artisty.html">Artistry</a></div>
+<div class="menu-item"><a href="photography.html">Photography</a></div>
+<div class="menu-item"><a href="graphic-design.html">Graphic Design</a></div>
+
+<div class="menu-separator"><a href="#">__________________</a></div>
+
+<div class="menu-item"><a href="videography.html">Videography</a></div>
+<div class="menu-item"><a href="filmography.html">Filmography</a></div>
+
+<div class="menu-separator"><a href="#">__________________</a></div>
+
+<details class="menu-list-dropdown menu-item">
 <summary class="menu-list-dropdown-trigger">Blog ▾</summary>
-
 <div class="menu-list-dropdown-content">
 <a href="#">---</a>
 <a href="#">---</a>
 <a href="#">---</a>
 </div>
-
 </details>
 
-
-
-<details class="menu-list-dropdown">
+<details class="menu-list-dropdown menu-item">
 <summary class="menu-list-dropdown-trigger">Authorship ▾</summary>
-
 <div class="menu-list-dropdown-content">
 <a href="authorship/pavement-felt-nice.html">Pavement Felt Nice</a>
 <a href="#">---</a>
 <a href="#">---</a>
 </div>
-
 </details>
 
+<div class="menu-item"><a href="dictionary.html">Dictionary</a></div>
+<div class="menu-item"><a href="writing-advice.html">Writing Advice</a></div>
 
-<a href="dictionary.html">Dictionary</a>
-<a href="writing-advice.html">Writing Advice</a>
+<div class="menu-separator"><a href="#">__________________</a></div>
 
-<a href="#">__________________</a>
-
-<a href="#">Music</a>
-<a href="#">Sound Effects</a>
+<div class="menu-item"><a href="#">Music</a></div>
+<div class="menu-item"><a href="#">Sound Effects</a></div>
 
 </div>
 </div>
@@ -332,11 +333,14 @@ width: 0;
 top: 0;
 left: 0;
 position: fixed;
-background: rgba(0, 0, 0, 0.75);
+background: rgba(0, 0, 0, 0.85);
 backdrop-filter: blur(5px);
 overflow-x: hidden;
-transition: 2.5s;
+transition: 0.5s;
 z-index: 12;
+scrollbar-width: none;
+-ms-overflow-style: none; 
+
 }
 
 .menu-overlay a {
@@ -370,7 +374,7 @@ right: 35px;
 
 .menu-overlay-content {
 position: relative;
-top: 25%;
+top: 10%; /* Shifted slightly higher to prevent scrolling on short screens */
 width: 100%;
 text-align: center;
 margin-top: 30px;
@@ -441,6 +445,40 @@ font-size: 4vh;
 
 .menu-list-dropdown-content a:hover {
 color: #f1f1f1;
+}
+
+
+
+/* SEARCH BAR */
+.menu-search-form {
+display: inline-flex;
+justify-content: center;
+margin-bottom: 30px;
+width: 80%;
+max-width: 400px;
+border: 2px solid #818181;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.menu-search-form input[type="text"] {
+background: transparent;
+border: none;
+padding: 10px;
+color: white;
+font-family: 'PxPlus IMB VGA8', monospace;
+font-size: 24px;
+width: 100%;
+text-align: center;
+outline: none;
+}
+
+.menu-search-form:focus-within {
+border-color: white;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.menu-item, .menu-separator {
+transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 
@@ -558,41 +596,6 @@ display: none;
 
 
 <script>
-/* LOADING SCREEN */
-(function() {
-const renderBar = document.getElementById('render-progress-bar');
-const loader = document.getElementById('loading-screen');
-let currentProgress = 15;
-
-const progressInterval = setInterval(() => {
-if (currentProgress < 85) {
-currentProgress += Math.floor(Math.random() * 5) + 2; // Increment by a random small amount
-if (renderBar) renderBar.style.width = currentProgress + "%";
-}
-}, 100);
-
-function completeLoading() {
-clearInterval(progressInterval);
-if (renderBar) renderBar.style.width = "100%";
-
-setTimeout(() => {
-if (loader) {
-loader.style.opacity = '0';
-loader.style.visibility = 'hidden';
-setTimeout(() => loader.remove(), 600);
-}
-}, 2000);
-}
-
-if (document.readyState === "complete") {
-completeLoading();
-} else {
-window.addEventListener('load', completeLoading);
-}
-})();
-
-
-
 /* MENU OPEN & CLOSE */
 function openMenu() {
 document.getElementById("menu").style.width = "100%";
@@ -600,6 +603,9 @@ document.getElementById("menu").style.width = "100%";
 
 function closeMenu() {
 document.getElementById("menu").style.width = "0%";
+// Optional: Clear search box when closing menu
+document.getElementById("menuSearchInput").value = "";
+filterMenu();
 }
 
 
@@ -637,6 +643,41 @@ event.preventDefault();
 
 
 
+/* LOADING SCREEN */
+(function() {
+const renderBar = document.getElementById('render-progress-bar');
+const loader = document.getElementById('loading-screen');
+let currentProgress = 15;
+
+const progressInterval = setInterval(() => {
+if (currentProgress < 85) {
+currentProgress += Math.floor(Math.random() * 5) + 2; // Increment by a random small amount
+if (renderBar) renderBar.style.width = currentProgress + "%";
+}
+}, 100);
+
+function completeLoading() {
+clearInterval(progressInterval);
+if (renderBar) renderBar.style.width = "100%";
+
+setTimeout(() => {
+if (loader) {
+loader.style.opacity = '0';
+loader.style.visibility = 'hidden';
+setTimeout(() => loader.remove(), 600);
+}
+}, 2000);
+}
+
+if (document.readyState === "complete") {
+completeLoading();
+} else {
+window.addEventListener('load', completeLoading);
+}
+})();
+
+
+
 /* SCROLL PROGRESS TRACKER */
 window.addEventListener('scroll', function() {
 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -647,7 +688,47 @@ const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
 document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
 });
 
+
+
+/* SEARCH BAR */
+const searchInput = document.getElementById('menuSearchInput');
+
+function filterMenu() {
+const filterValue = searchInput.value.toLowerCase().trim();
+const menuItems = document.querySelectorAll('.menu-item');
+const separators = document.querySelectorAll('.menu-separator');
+
+menuItems.forEach(item => {
+const text = item.textContent.toLowerCase();
+        
+if (text.includes(filterValue)) {
+item.style.display = "block";
+item.style.opacity = "1";
+item.style.transform = "scale(1)";
+            
+if (filterValue !== "" && item.tagName === "DETAILS") {
+item.setAttribute("open", "true");
+}
+} else {
+item.style.display = "none";
+item.style.opacity = "0";
+item.style.transform = "scale(0.95)";
+}
+});
+
+separators.forEach(sep => {
+sep.style.display = filterValue === "" ? "block" : "none";
+});
+}
+
+searchInput.addEventListener('input', filterMenu);
+
 </script>
+
+
+
+
+
 
 
 
