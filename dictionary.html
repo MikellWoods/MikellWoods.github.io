@@ -306,7 +306,7 @@ position: fixed;
 background: rgba(0, 0, 0, 0.85);
 backdrop-filter: blur(5px);
 overflow-x: hidden;
-transition: 2.5s;
+transition: 1.5s;
 z-index: 12;
 scrollbar-width: none;
 -ms-overflow-style: none; 
@@ -694,7 +694,7 @@ loader.style.opacity = '0';
 loader.style.visibility = 'hidden';
 setTimeout(() => loader.remove(), 600);
 }
-}, 2000);
+}, 800);
 }
 
 if (document.readyState === "complete") {
@@ -706,7 +706,7 @@ window.addEventListener('load', completeLoading);
 
 
 
-/* SCROLL PROGRESS TRACKER */
+/* HEADER SCROLL BAR */
 window.addEventListener('scroll', function() {
 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
