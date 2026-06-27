@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="Mike'll Woods">
+<meta name="keywords" content="photography, graphic design, videography, filmography, short stories, blogs, writing advice, dictionary">
+<meta name="description" content="My collection of work, ranging from photography, graphic design, videography, filmography, editing, & short stories">
+<meta name="copyright" content="Mike'll Woods" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="MikellWoods.github.io">
+<meta property="og:site_name" content="Mike'll Woods">
+<meta property="og:title" content="MW://Blog.Techosystem">
+<meta property="og:description" content="My collection of work, ranging from photography, graphic design, videography, filmography, editing, & short stories">
+
+<meta property="og:image" itemprop="image" content="MW Logo">
+<meta property="og:image:width" content="1080" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:alt" content="MW Logo" />
+<meta property="og:image:secure_url" itemprop="image" content="https://mikellwoods.github.io/assets/MWWMLogo1080.jpg">
+
+<link rel="icon" sizes="512x512" href="https://mikellwoods.github.io/assets/MWWMLogo512.jpg">
+<link rel="icon" sizes="192x192" href="https://mikellwoods.github.io/assets/MWWMLogo192.jpg">
+
+<meta name="theme-color" content="#000000" />
+
+<title>MW://Blog.Techosystem</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+<div id="loading-screen">
+<div class="loading-wrapper">
+<div class="loading-text">[LOADING]</div>
+<div class="render-progress-container">
+<div id="render-progress-bar"></div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="menu" class="menu-overlay">
+<a href="javascript:void(0)" class="menu-close-trigger" onclick="closeMenu()">&times;</a>
+<div class="menu-overlay-content">
+
+<form class="menu-search-form" id="menuSearchForm" onsubmit="event.preventDefault();">
+<input type="text" id="menuSearchInput" placeholder="[MW://SEARCH.BAR]" autocomplete="off">
+</form>
+
+<a href="index.html" class="menu-item">Index</a>
+<a href="#" class="menu-separator">__________________</a>
+<a href="artisty.html" class="menu-item">Artistry</a>
+<a href="photography.html" class="menu-item">Photography</a>
+<a href="graphic-design.html" class="menu-item">Graphic Design</a>
+<a href="#" class="menu-separator">__________________</a>
+<a href="videography.html" class="menu-item">Videography</a>
+<a href="filmography.html" class="menu-item">Filmography</a>
+<a href="#" class="menu-separator">__________________</a>
+
+<details class="menu-list-dropdown menu-item">
+<summary class="menu-list-dropdown-trigger">Blog ▾</summary>
+<div class="menu-list-dropdown-content">
+<a href="blogs/madness.html">Sympathy For Insanity</a>
+<a href="blogs/culture.html">Share Tales With Many</a>
+<a href="blogs/government.html">Belows Swear Of Above</a>
+<a href="#">Techosystem</a>
+<a href="blogs/personal.html">Me, Mine, And My Mind</a>
+<a href="blogs/miscellaneous.html">Miscellaneous</a>
+</div>
+</details>
+
+<details class="menu-list-dropdown menu-item">
+<summary class="menu-list-dropdown-trigger">Authorship ▾</summary>
+<div class="menu-list-dropdown-content">
+<a href="authorship/pavement-felt-nice.html">Pavement Felt Nice</a>
+<a href="#">---</a>
+<a href="#">---</a>
+</div>
+</details>
+
+<a href="dictionary.html" class="menu-item">Dictionary</a>
+<a href="writing-advice.html" class="menu-item">Writing Advice</a>
+<a href="#" class="menu-separator">__________________</a>
+<a href="#" class="menu-item">Music</a>
+<a href="#" class="menu-item">SFX</a>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="header-menu-bar-container">
+<div class="header">
+<h1 style="font-size: 6.5vh; margin: 10px 0;">Technology</h1>
+</div>
+<div id="menu-bar">
+<span id="menu-button" onclick="openMenu()">&#9776;</span>
+</div>
+<div class="scroll-progress-container">
+<div id="scroll-progress-bar"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="main-body main-body-text" id="glass-area">
+<div class="blog-row">
+<div class="blog-leftcolumn">
+<div class="blog-card">
+<h2>X://HEADING</h2>
+<h5>X://descript.date</h5>
+<p>X://first.sentence</p>
+<p>X://paragraphy</p>
+</div>
+<div class="blog-card">
+<h2>X://HEADING</h2>
+<h5>X://descript.date</h5>
+<p>X://first.sentence</p>
+<p>X://paragraphy</p>
+</div>
+</div>
+
+<div class="blog-rightcolumn">
+<div class="blog-card">
+<h2>X://BLOG.Details</h2>
+<p>X://explain</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="footer">
+<p style="margin: 1.5vh 0;">More Info</p>
+</div>
+
+
+
+
+
+<div class="crt"></div>
+
+
+
+
+
+<style>
+/* G E N E R A L */
+@font-face {
+font-family: 'PxPlus IBM VGA8';
+src: url('/assets/PxPlus_IBM_VGA8.ttf') format('truetype');
+}
+
+html, body {
+background-image: linear-gradient(to bottom, black, #404040);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: black;
+color: white;
+font-family: 'PxPlus IBM VGA8';
+scroll-behavior: smooth;
+-webkit-user-drag: none;
+user-select: none;
+margin: 0;
+}
+
+.header-menu-bar-container {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+width: 100%;
+z-index: 10;
+}
+
+.header {
+background: rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(8px);
+color: white;
+text-align: center;
+overflow: hidden;
+}
+
+.main-body {
+padding: 2vw;
+color: white;
+}
+
+.main-body-text {
+font-size: 2.5vh;
+text-align: left;
+}
+
+#glass-area {
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(8px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 2vh;
+box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+padding: 2vw;
+margin: 4vw;
+z-index: 0;
+margin-top: 22vh;
+margin-bottom: 8vh;
+}
+
+.footer {
+background: rgba(50, 50, 50, 0.50);
+backdrop-filter: blur(8px);
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 5vh;
+color: white;
+text-align: center;
+z-index: 10;
+}
+
+* {
+box-sizing: border-box;
+}
+
+
+
+/* MENU OVERLAY */
+.menu-overlay {
+height: 100%;
+width: 0;
+top: 0;
+left: 0;
+position: fixed;
+background: rgba(0, 0, 0, 0.92);
+backdrop-filter: blur(5px);
+overflow-x: hidden;
+transition: 0.5s;
+z-index: 12;
+}
+
+.menu-overlay a {
+padding: 8px;
+text-decoration: none;
+font-size: 36px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.menu-overlay a:hover, .menu-overlay a:focus {
+color: #f1f1f1;
+}
+
+.menu-overlay .menu-close-trigger {
+position: absolute;
+top: 20px;
+right: 45px;
+font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+.menu-overlay a {font-size: 20px}
+.menu-overlay .menu-close-trigger {
+font-size: 40px;
+top: 15px;
+right: 35px;
+}
+}
+
+.menu-overlay-content {
+position: relative;
+top: 10%;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+}
+
+#menu-button {
+font-size: 5vh;
+cursor: pointer;
+color: white;
+margin-left: 15px;
+display: inline-block;
+margin-top: 5px;
+}
+
+#menu-bar {
+overflow: hidden;
+background: rgba(50, 50, 50, 0.50);
+backdrop-filter: blur(8px);
+height: 7vh;
+}
+
+
+
+/* MENU LIST DROPDOWN */
+.menu-list-dropdown {
+display: block;
+text-align: center;
+}
+
+.menu-list-dropdown-trigger {
+padding: 8px;
+font-size: 36px;
+color: #818181;
+display: block;
+cursor: pointer;
+list-style: none;
+transition: 0.3s;
+}
+
+.menu-list-dropdown-trigger::-webkit-details-marker {
+display: none;
+}
+
+.menu-list-dropdown-trigger:hover, .menu-list-dropdown-trigger:focus {
+color: #f1f1f1;
+}
+
+.menu-list-dropdown-content a {
+font-size: 4vh;
+}
+
+
+
+/* CRT EFFECTS & ANIMATIONS */
+@keyframes flicker {
+0%, 10%, 20%, 40%, 60%, 100% { opacity: 0.25; }
+5%, 30%, 35%, 75%, 95% { opacity: 0.50; }
+15%, 25%, 45%, 50%, 80% { opacity: 0.85; }
+55% { opacity: 0.08; }
+65%, 70%, 85%, 90% { opacity: 0.70; }
+}
+
+.crt::after {
+content: " ";
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background: rgba(18, 16, 16, 0.1);
+opacity: 0;
+z-index: 99999;
+pointer-events: none;
+animation: flicker 0.15s infinite;
+}
+
+.crt::before {
+content: " ";
+display: block;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+z-index: 99999;
+background-size: 100% 2px, 3px 100%;
+pointer-events: none;
+}
+
+@keyframes glitch {
+0% { text-shadow: 2px 2px #ffffff, -2px -2px rgb(255, 255, 255); }
+25% { text-shadow: -2px 2px rgb(255, 255, 255), 2px -2px rgb(255, 255, 255); }
+50% { text-shadow: 2px -2px rgb(255, 255, 255), -2px 2px rgb(255, 255, 255); }
+75% { text-shadow: -2px -2px rgb(255, 255, 255), 2px 2px rgb(255, 255, 255); }
+100% { text-shadow: 2px 2px rgb(255, 255, 255), -2px -2px rgb(255, 255, 255); }
+}
+
+a {
+color: rgb(255, 255, 255);
+text-decoration: none;
+}
+
+a:hover {
+animation: glitch 1s infinite;
+color: #000000;
+}
+
+
+
+/* BLOG LAYOUT */
+.blog-leftcolumn {   
+float: left;
+width: 74%;
+}
+
+.blog-rightcolumn {
+float: left;
+width: 26%;
+padding-left: 2vw;
+}
+
+.blog-card {
+background-color: rgba(0, 0, 0, 0.3);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 1vh;
+padding: 20px;
+margin-bottom: 2vw;
+word-wrap: break-word;
+}
+
+.blog-card h2, .blog-card h3 {
+margin-top: 0;
+color: #fff;
+}
+
+.blog-card h5 {
+color: rgba(255, 255, 255, 0.6);
+margin-top: -5px;
+margin-bottom: 15px;
+}
+
+.blog-row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+@media screen and (max-width: 800px) {
+.blog-leftcolumn, .blog-rightcolumn {   
+width: 100%;
+padding-left: 0;
+}
+}
+
+
+
+/* LOADING SCREEN */
+#loading-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: #000000;
+z-index: 99998; 
+display: flex;
+justify-content: center;
+align-items: center;
+transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.6s;
+}
+
+.loading-wrapper {
+text-align: center;
+width: 250px;
+}
+
+.loading-text {
+color: #ffffff;
+font-size: 4vh;
+letter-spacing: 4px;
+margin-bottom: 15px;
+animation: pulse 1.5s infinite ease-in-out;
+}
+
+.render-progress-container {
+width: 100%;
+height: 6px;
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#render-progress-bar {
+height: 100%;
+width: 15%;
+background: #ffffff;
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+transition: width 0.4s ease-out;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 0.4; }
+50% { opacity: 1; }
+}
+
+
+
+/* SEARCH BAR */
+.menu-search-form {
+display: inline-flex;
+justify-content: center;
+margin-bottom: 30px;
+width: 80%;
+max-width: 400px;
+border: 2px solid #818181;
+background: rgba(0, 0, 0, 0.6);
+}
+
+.menu-search-form input[type="text"] {
+background: transparent;
+border: none;
+padding: 10px;
+color: white;
+font-family: 'PxPlus IBM VGA8', monospace;
+font-size: 24px;
+width: 100%;
+text-align: center;
+outline: none;
+}
+
+.menu-search-form:focus-within {
+border-color: white;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.menu-item, .menu-separator {
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+/* SCROLL BAR HEADER */
+.scroll-progress-container {
+width: 100%;
+height: 4px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(8px);
+}
+
+#scroll-progress-bar {
+height: 100%;
+width: 0%;
+background: rgba(255, 255, 255, 0.8);
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
+transition: width 0.1s ease-out;
+}
+
+
+
+/* SCROLLBAR HIDER */
+html {
+scrollbar-width: none; 
+}
+
+body {
+-ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar, body::-webkit-scrollbar-button {
+display: none;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<script>
+/* MENU OPEN & CLOSE */
+function openMenu() {
+document.getElementById("menu").style.width = "100%";
+}
+
+function closeMenu() {
+document.getElementById("menu").style.width = "0%";
+}
+
+
+
+/* PAGE PROTECTOR */
+document.addEventListener('contextmenu', function(event) {
+if (event.target.tagName) {
+event.preventDefault();
+}
+});
+
+
+
+/* LOADING SCREEN */
+(function() {
+const renderBar = document.getElementById('render-progress-bar');
+const loader = document.getElementById('loading-screen');
+let currentProgress = 15;
+
+const progressInterval = setInterval(() => {
+if (currentProgress < 85) {
+currentProgress += Math.floor(Math.random() * 5) + 2;
+if (renderBar) renderBar.style.width = currentProgress + "%";
+}
+}, 100);
+
+function completeLoading() {
+clearInterval(progressInterval);
+if (renderBar) renderBar.style.width = "100%";
+
+setTimeout(() => {
+if (loader) {
+loader.style.opacity = '0';
+loader.style.visibility = 'hidden';
+setTimeout(() => loader.remove(), 600);
+}
+}, 800);
+}
+
+if (document.readyState === "complete") {
+completeLoading();
+} else {
+window.addEventListener('load', completeLoading);
+}
+})();
+
+
+
+/* HEADER SCROLL BAR */
+window.addEventListener('scroll', function() {
+const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
+});
+
+
+
+/* SEARCH BAR FILTERS */
+const searchInput = document.getElementById('menuSearchInput');
+
+function filterMenu() {
+const filterValue = searchInput.value.toLowerCase().trim();
+const menuItems = document.querySelectorAll('.menu-item');
+const separators = document.querySelectorAll('.menu-separator');
+
+menuItems.forEach(item => {
+const text = item.textContent.toLowerCase();
+
+if (text.includes(filterValue)) {
+item.style.display = "block";
+item.style.opacity = "1";
+item.style.transform = "scale(1)";
+
+if (filterValue !== "" && item.tagName === "DETAILS") {
+item.setAttribute("open", "true");
+}
+} else {
+item.style.display = "none";
+item.style.opacity = "0";
+item.style.transform = "scale(0.95)";
+}
+});
+
+separators.forEach(sep => {
+sep.style.display = filterValue === "" ? "block" : "none";
+});
+}
+
+searchInput.addEventListener('input', filterMenu);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
