@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="author" content="Mike'll Woods">
-<meta name="keywords" content="photography, graphic design, videography, filmographyl, short stories, blogs, writing advice, dictionary">
+<meta name="keywords" content="photography, graphic design, videography, filmography, short stories, blogs, writing advice, dictionary">
 <meta name="description" content="My collection of work, ranging from photography, graphic design, videography, filmography, editing, & short stories">
 <meta name="copyright" content="Mike'll Woods" />
 <meta name="apple-mobile-web-app-capable" content="soon">
@@ -13,9 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="MikellWoods.github.io">
 <meta property="og:site_name" content="Mike'll Woods">
-<meta property="og:title" content="MW://Videography.Projects">
+<meta property="og:title" content="MW://SFX.Library">
 <meta property="og:description" content="My collection of work, ranging from photography, graphic design, videography, filmography, editing, & short stories">
-<meta property="og:type" content="website">
 
 <meta property="og:image" itemprop="image" content="MW Logo">
 <meta property="og:image:width" content="1080" />
@@ -30,22 +29,24 @@
 
 <meta name="theme-color" content="#000000" />
 
-<title>MW://Videography.Projects</title>
+<title>MW://SFX.Library</title>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  
+
 </head>
+
+
+
+
+
+
+
+
+
 
 <body>
 
 
 
-
-
-
-
-
-
-    
 <div id="loading-screen">
 <div class="loading-wrapper">
 <div class="loading-text">[LOADING]</div>
@@ -54,6 +55,7 @@
 </div>
 </div>
 </div>
+
 
 
 
@@ -69,8 +71,7 @@
 
 
 
-
-<div class="menu-item"><a href="index.html">Index</a></div>
+<div class="menu-item"><a href="#">Index</a></div>
 
 <div class="menu-separator"><a href="#">__________________</a></div>
 
@@ -80,7 +81,7 @@
 
 <div class="menu-separator"><a href="#">__________________</a></div>
 
-<div class="menu-item"><a href="#">Videography</a></div>
+<div class="menu-item"><a href="videography.html">Videography</a></div>
 <div class="menu-item"><a href="filmography.html">Filmography</a></div>
 
 <div class="menu-separator"><a href="#">__________________</a></div>
@@ -108,22 +109,16 @@
 
 <div class="menu-separator"><a href="#">__________________</a></div>
 
-<div class="menu-item"><a href="music.html">Music</a></div>
-<div class="menu-item"><a href="sfx.html">Sound Effects</a></div>
+<div class="menu-item"><a href="#">Music</a></div>
+<div class="menu-item"><a href="#">Sound Effects</a></div>
 
 </div>
 </div>
-
-
-
-
-
 
 
 
 <div class="header-menu-bar-container">
-
-<div class="header"><h1 style="font-size: 6.5vh; margin: 20px 0px">Videography</h1></div>
+<div class="header"><h1 style="font-size: 6.5vh; margin: 20px 0px">SFX</h1></div>
 <div id="menu-bar"><span id="menu-button" onclick="openMenu()">&#9776;</span></div>
 <div class="scroll-progress-container">
 <div id="scroll-progress-bar"></div>
@@ -134,60 +129,46 @@
 
 
 
+
 <div class="main-body main-body-text" id="glass-area">
 
 
-
-
-
-<section class="videography-gallery">
-
-<div class="videography-grid">
-<article class="videography-card">
-<div class="videography-wrapper">
-<iframe src="https://www.youtube.com/embed/kLOcBmRII3o" title="Colors Before The Darkness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<h3 class="videography-title">Colors Before The Darkness</h3>
-<p class="videography-description">X://---</p>
-</article>
-
-
-
-<article class="videography-card">
-<div class="videography-wrapper">
-<iframe src="https://www.youtube.com/embed/" title="X://---" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<h3 class="videography-title">X://---</h3>
-<p class="videography-description">X://---</p>
-</article>
-
-
-
-<article class="videography-card">
-<div class="videography-wrapper">
-<iframe src="https://www.youtube.com/embed/" title="X://---" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<h3 class="videography-title">X://---</h3>
-<p class="videography-description">X://---</p>
-</article>
-
-
-
-
-<article class="videography-card">
-<div class="videography-wrapper">
-<iframe src="https://www.youtube.com/embed/" title="X://---" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<h3 class="videography-title">X://---</h3>
-<p class="videography-description">X://---</p>
-</article>
+<div class="sfx-visualizer-container">
+<div class="sfx-visualizer-label">[MW://MUSIC.DISPLAY]</div>
+<canvas id="sfx-visualizer-canvas"></canvas>
 </div>
 
 
 
-</section>
+<div class="sfx-library-grid">
+   
+<div class="sfx-card">
+<div class="sfx-album-art-placeholder">
+<img src="" alt="">
+</div>
+<div class="sfx-track-info">
+<div class="sfx-track-title"></div>
+<div class="sfx-track-artist">MW://Mike'll.Woods</div>
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
+<source src="" type="audio/mpeg">
+Audio unsupported.
+</audio>
+</div>
+</div>
+
+
+
+
+
+
 
 </div>
+
+
+
+</div>
+
+
 
 
 
@@ -197,11 +178,10 @@
 
 
 
+
+
+
 <div class="crt"></div>
-
-
-
-
 
 
 
@@ -222,7 +202,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-color: black;
 color: white;
-font-family: 'PxPlus IMB VGA8';
+font-family: 'PxPlus IMB VGA8'; 
 scroll-behavior: smooth;
 -webkit-user-drag: none;
 user-select: none;
@@ -289,7 +269,7 @@ width: 0;
 top: 0;
 left: 0;
 position: fixed;
-background: rgba(0, 0, 0, 0.75);
+background: rgba(0, 0, 0, 0.85);
 backdrop-filter: blur(5px);
 overflow-x: hidden;
 transition: 1.5s;
@@ -329,7 +309,7 @@ right: 35px;
 
 .menu-overlay-content {
 position: relative;
-top: 25%;
+top: 10%;
 width: 100%;
 text-align: center;
 margin-top: 30px;
@@ -382,12 +362,12 @@ font-size: 36px;
 color: #818181;
 display: block;
 cursor: pointer;
-list-style: none; /* Hides default dropdown arrow */
+list-style: none;
 transition: 0.3s;
 }
 
 .menu-list-dropdown-trigger::-webkit-details-marker {
-display: none; /* Hides default arrow in Safari */
+display: none;
 }
 
 .menu-list-dropdown-trigger:hover, .menu-list-dropdown-trigger:focus {
@@ -446,12 +426,10 @@ pointer-events: none;
 animation: textShadow 1.6s infinite;
 }
 
-
-
 /* LINK TEXT GLITCH EFFECT */
 .glitch-text a {
 position: relative;
-color: rgb(255, 255, 255);;
+color: rgb(255, 255, 255);
 font-size: 2.5rem;
 text-align: center;
 text-decoration: none;
@@ -467,10 +445,9 @@ animation: glitch 1s infinite;
 }
 
 a {
-color: rgb(255, 255, 255);;
+color: rgb(255, 255, 255);
 text-decoration: none;
 }
-
 
 a:hover {
 animation: glitch 1s infinite;
@@ -480,7 +457,7 @@ color: #000000;
 a[href="/"] {
 display: inline-block;
 margin-top: 1rem;
-color: rgb(255, 255, 255);;
+color: rgb(255, 255, 255);
 font-style: italic;
 text-decoration: underline;
 opacity: 0.8;
@@ -489,80 +466,6 @@ opacity: 0.8;
 a[href="/"]:hover {
 opacity: 1;
 }
-
-
-
-/* VIDEOGRAPHY FOOTAGE AREA */
-.videography-gallery {
-width: 100%;
-margin: 0 auto;
-}
-
-.videography-gallery-title {
-font-size: 5vh;
-margin-bottom: 4vh;
-text-transform: uppercase;
-letter-spacing: 2px;
-}
-
-.videography-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2vw;
-justify-content: center;
-}
-
-@media screen and (min-width: 1024px) {
-.videography-grid {
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-}
-
-.videography-card {
-background: rgba(0, 0, 0, 0.4);
-border: 1px solid rgba(255, 255, 255, 0.15);
-border-radius: 1vh;
-padding: 15px;
-transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.videography-card:hover {
-transform: translateY(-5px);
-border-color: rgba(255, 255, 255, 0.5);
-}
-
-.videography-wrapper {
-position: relative;
-padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-height: 0;
-overflow: hidden;
-border-radius: 0.5vh;
-margin-bottom: 15px;
-}
-
-.videography-wrapper iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
-
-.videography-title {
-font-size: 2.5vh;
-margin: 10px 0 5px 0;
-text-align: left;
-}
-
-.videography-description {
-font-size: 1.8vh;
-color: #cccccc;
-text-align: left;
-margin: 0;
-line-height: 1.4;
-}
-
-
 
 /* LOADING SCREEN */
 #loading-screen {
@@ -679,6 +582,115 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button {
 display: none;
 }
 
+
+
+/* SFX LIBRARY */
+.sfx-library-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+margin-top: 10px;
+padding: 10px;
+}
+
+.sfx-card {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 1vh;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sfx-card:hover {
+background: rgba(255, 255, 255, 0.15);
+border-color: rgba(255, 255, 255, 0.5);
+}
+
+.sfx-album-art-placeholder {
+width: 150px;
+height: 150px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2vh;
+color: rgba(255, 255, 255, 0.6);
+margin-bottom: 15px;
+background: rgba(0, 0, 0, 0.3);
+overflow: hidden;
+}
+
+.sfx-album-art-placeholder img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.sfx-track-info {
+width: 100%;
+}
+
+.sfx-track-title {
+font-size: 2.5vh;
+margin-bottom: 5px;
+word-wrap: break-word;
+overflow-wrap: break-word;
+}
+
+.sfx-track-artist {
+font-size: 1.8vh;
+color: rgba(255, 255, 255, 0.6);
+margin-bottom: 15px;
+}
+
+.sfx-card audio {
+width: 100%;
+height: 35px;
+outline: none;
+filter: invert(1) hue-rotate(180deg);
+opacity: 0.8;
+}
+
+.sfx-card audio:hover {
+opacity: 1;
+}
+
+
+
+/* AUDIO VISUALIZER */
+.sfx-visualizer-container {
+background: rgba(0, 0, 0, 0.4);
+border: 1px dashed rgba(255, 255, 255, 0.3);
+border-radius: 1vh;
+padding: 15px;
+margin: 0 auto 30px auto;
+width: 100%;
+max-width: 600px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.sfx-visualizer-label {
+font-size: 1.8vh;
+color: rgba(255, 255, 255, 0.5);
+margin-bottom: 10px;
+letter-spacing: 2px;
+}
+
+#sfx-visualizer-canvas {
+width: 100%;
+height: 120px;
+background: transparent;
+display: block;
+}
+
 </style>
 
 
@@ -698,6 +710,8 @@ document.getElementById("menu").style.width = "100%";
 
 function closeMenu() {
 document.getElementById("menu").style.width = "0%";
+document.getElementById("menuSearchInput").value = "";
+filterMenu();
 }
 
 
@@ -791,7 +805,91 @@ sep.style.display = filterValue === "" ? "block" : "none";
 
 searchInput.addEventListener('input', filterMenu);
 
+
+
+/* ONLY PLAY ONE TRACK AT A TIME */
+document.addEventListener('play', function(e) {
+const audios = document.querySelectorAll('audio');
+audios.forEach(audio => {
+if (audio !== e.target) {
+audio.pause();
+}
+});
+}, true);
+
+
+
+/* AUDIO VISUALIZER */
+(function() {
+let audioCtx;
+let analyser;
+let bufferLength;
+let dataArray;
+const canvas = document.getElementById('sfx-visualizer-canvas');
+const canvasCtx = canvas.getContext('2d');
+const audioSourcesMap = new Map();
+
+function initAudioContext() {
+if (audioCtx) return;
+audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+analyser = audioCtx.createAnalyser();
+analyser.fftSize = 256;
+bufferLength = analyser.frequencyBinCount;
+dataArray = new Uint8Array(bufferLength);
+analyser.connect(audioCtx.destination);
+drawVisualizer();
+}
+
+function setupAudioSource(audioElement) {
+if (audioSourcesMap.has(audioElement)) return;
+initAudioContext();
+try {
+const source = audioCtx.createMediaElementSource(audioElement);
+source.connect(analyser);
+audioSourcesMap.set(audioElement, source);
+} catch (err) {
+console.log("Visualizer routing notice:", err);
+}
+}
+
+document.addEventListener('play', function(e) {
+if (e.target.tagName === 'AUDIO') {
+if (audioCtx && audioCtx.state === 'suspended') {
+audioCtx.resume();
+}
+setupAudioSource(e.target);
+}
+}, true);
+
+function resizeCanvas() {
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function drawVisualizer() {
+requestAnimationFrame(drawVisualizer);
+if (!analyser) return;
+analyser.getByteFrequencyData(dataArray);
+canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+const barWidth = (canvas.width / bufferLength) * 1.5;
+let barHeight;
+let x = 0;
+for (let i = 0; i < bufferLength; i++) {
+barHeight = dataArray[i] / 2;
+canvasCtx.fillStyle = 'rgba(255, 255, 255, ' + (barHeight / 150 + 0.1) + ')';
+canvasCtx.fillRect(x, canvas.height - barHeight, barWidth - 2, barHeight);
+x += barWidth;
+}
+}
+})();
 </script>
+
+
+
+
+
 
 
 
