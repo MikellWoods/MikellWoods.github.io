@@ -133,9 +133,9 @@
 <div class="main-body main-body-text" id="glass-area">
 
 
-<div class="visualizer-container">
-<div class="visualizer-label">[MW://AUDIO.DISPLAY]</div>
-<canvas id="visualizer-canvas"></canvas>
+<div class="music-visualizer-container">
+<div class="music-visualizer-label">[MW://MUSIC.DISPLAY]</div>
+<canvas id="music-visualizer-canvas"></canvas>
 </div>
 
 
@@ -224,22 +224,6 @@ Audio unsupported.
 
 <div class="music-card">
 <div class="music-album-art-placeholder">
-<img src="assets/music/a sky of citrus fog.jpg" alt="a sky of citrus fog">
-</div>
-<div class="music-track-info">
-<div class="music-track-title">a sky of citrus fog</div>
-<div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload" crossOrigin="anonymous">
-<source src="assets/music/a sky of citrus fog.mp3" type="audio/mpeg">
-Audio unsupported.
-</audio>
-</div>
-</div>
-   
-
-
-<div class="music-card">
-<div class="music-album-art-placeholder">
 <img src="assets/music/false descent into the oldest lie.jpg" alt="false descent into the oldest lie">
 </div>
 <div class="music-track-info">
@@ -252,8 +236,39 @@ Audio unsupported.
 </div>
 </div>
    
+   
+   
+<div class="music-card">
+<div class="music-album-art-placeholder">
+<img src="assets/music/flowers are blooming when they shouldnt.jpg" alt="flowers are blooming when they shouldn't">
+</div><div class="music-track-info">
+<div class="music-track-title">flowers are blooming when they shouldn't</div>
+<div class="music-track-artist">MW://Mike'll.Woods</div>
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
+<source src="assets/music/flowers are blooming when they shouldnt.mp3" type="audio/mpeg">
+Audio unsupported.
+</audio>
+</div>
+</div>
 
 
+
+<div class="music-card">
+<div class="music-album-art-placeholder">
+<img src="assets/music/a sky of citrus fog.jpg" alt="a sky of citrus fog">
+</div>
+<div class="music-track-info">
+<div class="music-track-title">a sky of citrus fog</div>
+<div class="music-track-artist">MW://Mike'll.Woods</div>
+<audio controls controlsList="nodownload" crossOrigin="anonymous">
+<source src="assets/music/a sky of citrus fog.mp3" type="audio/mpeg">
+Audio unsupported.
+</audio>
+</div>
+</div>
+   
+   
+   
 <div class="music-card">
 <div class="music-album-art-placeholder">
 <img src="assets/music/out of bounds.jpg" alt="out of bounds">
@@ -277,21 +292,6 @@ Audio unsupported.
 <div class="music-track-artist">MW://Mike'll.Woods</div>
 <audio controls controlsList="nodownload" crossOrigin="anonymous">
 <source src="assets/music/funfun.mp3" type="audio/mpeg">
-Audio unsupported.
-</audio>
-</div>
-</div>
-   
-
-
-<div class="music-card">
-<div class="music-album-art-placeholder">
-<img src="assets/music/flowers are blooming when they shouldnt.jpg" alt="flowers are blooming when they shouldn't">
-</div><div class="music-track-info">
-<div class="music-track-title">flowers are blooming when they shouldn't</div>
-<div class="music-track-artist">MW://Mike'll.Woods</div>
-<audio controls controlsList="nodownload" crossOrigin="anonymous">
-<source src="assets/music/flowers are blooming when they shouldnt.mp3" type="audio/mpeg">
 Audio unsupported.
 </audio>
 </div>
@@ -800,7 +800,7 @@ opacity: 1;
 
 
 /* AUDIO VISUALIZER */
-.visualizer-container {
+.music-visualizer-container {
 background: rgba(0, 0, 0, 0.4);
 border: 1px dashed rgba(255, 255, 255, 0.3);
 border-radius: 1vh;
@@ -814,14 +814,14 @@ flex-direction: column;
 align-items: center;
 }
 
-.visualizer-label {
+.music-visualizer-label {
 font-size: 1.8vh;
 color: rgba(255, 255, 255, 0.5);
 margin-bottom: 10px;
 letter-spacing: 2px;
 }
 
-#visualizer-canvas {
+#music-visualizer-canvas {
 width: 100%;
 height: 120px;
 background: transparent;
@@ -962,7 +962,7 @@ let audioCtx;
 let analyser;
 let bufferLength;
 let dataArray;
-const canvas = document.getElementById('visualizer-canvas');
+const canvas = document.getElementById('music-visualizer-canvas');
 const canvasCtx = canvas.getContext('2d');
 const audioSourcesMap = new Map();
 
